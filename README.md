@@ -135,21 +135,27 @@ Leave C233 in place. Removing R235 alone isolates the video jack. All three are 
 
 The monitor-out jacks and the SCART footprint share nets, so you can link pad to pad on the footprint:
 
-| From | To | Channel |
-|---|---|---|
-| Pad 19 | Pad 15 | Red |
-| Pad 3 | Pad 7 | Blue |
-| Pad 1 | Pad 11 | Green |
+| Jack | From | To | Channel |
+|---|---|---|---|
+| V-OUT | Pad 19 | Pad 15 | Red |
+| L-OUT | Pad 3 | Pad 11 | Green |
+| R-OUT | Pad 1 | Pad 7 | Blue |
 
 **Verify this on your board first.** C233's output node splits two ways, to R235 for the jack and to R237 for SCART pad 19, and on my set R237 was unpopulated. Beep each jack's centre pin to its SCART pad. If they beep, link pad to pad. If they don't, run a short wire from the jack's own pad to the SCART pad instead. Same electrical result.
 
-The colour assignment above is chosen so the two audio-side links nest rather than cross. Jack-to-colour is arbitrary since you are labelling the back panel anyway, so take the tidy routing.
+Jack-to-colour is arbitrary, since you are labelling the back panel yourself. The mapping above is the one on the set photographed here, which keeps the panel order reading R, G, B left to right.
+
+Note that the two audio-side links **cross** with this mapping. If you would rather they nest, swap them: pad 3 to pad 7 for blue and pad 1 to pad 11 for green, then label the panel to match.
 
 **Use insulated wire.** All three links run along the odd pad row and pass over other pads, including grounds at 5, 9, 13 and 17. Not bare links, and certainly not solder bridges.
 
 **Grounds come free.** The jack shells and SCART ground pads are the same copper, so there is no separate ground wiring at all.
 
 **The board silkscreen names the jacks**, so you can identify everything from the board without tracing. Look for `V1-IN`, `L-I` and `R-I` on the AV1 inputs, and `TV-o`, `L-o` and `R-o` on the three monitor outputs you are repurposing. `PJ201` marks the connector.
+
+![Rear panel, labelled](photos/rear-panel-labelled.jpg)
+
+*The AV1 block after the mod. The OUT row is now the RGB input, relabelled R, G, B. The IN row is unchanged: composite into VIDEO for sync, audio into L and R.*
 
 ![PJ201 area, solder side](photos/pj201-solder-side.jpg)
 

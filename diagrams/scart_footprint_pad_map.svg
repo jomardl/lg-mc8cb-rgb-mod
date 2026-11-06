@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="680" height="462" viewBox="0 0 680 462" role="img">
 <title>PJ201 SCART footprint: pad map and the three RGB links</title>
-<desc>Logical map of the SCART footprint. Even row carries R-IN pad 2, L-IN pad 6, AV-ID pad 8, EXT-FB pad 16 with R234 unfitted, and VIDEO01 pad 20 terminated by R236. Odd row carries R-OUT pad 1, L-OUT pad 3, EXT-B pad 7, EXT-G pad 11 and EXT-R pad 15 each with a 75 ohm termination, and V-OUT pad 19. Removing R235, C232 and C231 isolates pads 19, 3 and 1, which are then linked to pads 15, 7 and 11.</desc>
+<desc>Logical map of the SCART footprint. Even row carries R-IN pad 2, L-IN pad 6, AV-ID pad 8, EXT-FB pad 16 with R234 unfitted, and VIDEO01 pad 20 terminated by R236. Odd row carries R-OUT pad 1, L-OUT pad 3, EXT-B pad 7, EXT-G pad 11 and EXT-R pad 15 each with a 75 ohm termination, and V-OUT pad 19. Removing R235, C232 and C231 isolates pads 19, 3 and 1, which are linked to pads 15, 11 and 7. The two audio-side links cross.</desc>
 <style>
 text{font-family:Arial,Helvetica,sans-serif}
 .t{font-size:14px;fill:#3D3D3A}
@@ -72,10 +72,10 @@ text{font-family:Arial,Helvetica,sans-serif}
 <text class="ts" x="594" y="236" text-anchor="middle">V-OUT</text>
 <path d="M594 219 L594 222 L566 222 L566 290 L510 290 L510 222 L482 222 L482 219" fill="none" stroke="#D85A30" stroke-width="2"/>
 <text class="ts" x="538" y="306" text-anchor="middle">red</text>
-<path d="M146 219 L146 222 L174 222 L174 340 L230 340 L230 222 L258 222 L258 219" fill="none" stroke="#D85A30" stroke-width="2"/>
-<text class="ts" x="202" y="356" text-anchor="middle">blue</text>
-<path d="M90 219 L90 222 L118 222 L118 388 L342 388 L342 222 L370 222 L370 219" fill="none" stroke="#D85A30" stroke-width="2"/>
-<text class="ts" x="230" y="404" text-anchor="middle">green</text>
+<path d="M90 219 L90 222 L118 222 L118 340 L230 340 L230 222 L258 222 L258 219" fill="none" stroke="#D85A30" stroke-width="2"/>
+<text class="ts" x="140" y="356" text-anchor="middle">blue</text>
+<path d="M146 219 L146 222 L174 222 L174 388 L342 388 L342 222 L370 222 L370 219" fill="none" stroke="#D85A30" stroke-width="2"/>
+<text class="ts" x="258" y="404" text-anchor="middle">green</text>
 <line x1="150" y1="440" x2="174" y2="440" stroke="#D85A30" stroke-width="2"/>
 <text class="ts" x="180" y="444">insulated link to add</text>
 <line x1="330" y1="434" x2="346" y2="446" stroke="#D85A30" stroke-width="1.5"/>
