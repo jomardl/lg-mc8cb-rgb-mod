@@ -117,7 +117,7 @@ This beats fitting new jacks: no cabinet modification, and the runs drop from 20
 | SPST toggle switch | 1 | Panel |
 | Hookup wire | | Switch legs |
 
-That is the whole bill of materials. The 75R terminations are already on the board.
+**The 75R terminations are already on the board.**
 
 The pull-up value is not critical. With R535 measured at 1.4k in circuit, anything from **3.3k to 7k** lands pin 26 inside the insertion band with margin for an 8V rail at tolerance and a 5% resistor. 5.1k gives 1.72V, worst case 1.55 to 1.91V, which never approaches either threshold. 10k is too much: 0.98V nominal, and it falls under the 0.9V floor on a sagging rail.
 
@@ -176,27 +176,14 @@ Leave R234 and the J-position links empty. R234 is the 75R on the blanking line:
 
 ![SCART footprint pad map](diagrams/scart_footprint_pad_map.svg)
 
-### Service menu
-
-**This is the step that makes it work.**
+### Service menu  NB!
 
 1. Enter SVC mode: press **OK on the TV set and OK on the remote at the same time**.
 2. Press the **Yellow** button to cycle pages until `OPTION-1`.
 3. Set **SCART** to `1`.
 4. Exit by switching off **with the remote**, so the µC writes the EEPROM.
 
-Record all three OPTION bytes before you change anything.
-
-If your remote has no colour keys, which is the case for the remote this set shipped with, the manual says to use an LG service remote (105-201G). The manual elsewhere refers to "PSM (RED)", so the colour functions are mapped onto the ordinary buttons: try Q.VIEW and SSM for Yellow and Green before buying anything.
-
-If your menu shows OPTION-1 as a byte rather than named fields, the encoding is plain binary:
-
-```
-OPTION-1 = 32·COMB + 16·TILT + 8·SCART + 4·AV2 + SYSTEM(0..3)
-```
-
-So the SCART bit is the 8s bit. If `value mod 16` is under 8, add 8.
-
+If your remote has no colour keys, you can use the 'Q.VIEW' button to cycle between screens.
 ---
 
 ## Sync and audio
@@ -218,7 +205,7 @@ Do these in order. The first two prove the blanking half without any RGB source 
 3. **Meter the node, switch closed.** About 1.7V with a 5.1k.
 4. **Then the source.** Composite into V-IN, audio into L-IN and R-IN, select AV1, close the switch.
 
-### When it goes wrong
+### Troubleshoot
 
 | Symptom | Cause |
 |---|---|
@@ -235,7 +222,7 @@ Do these in order. The first two prove the blanking half without any RGB source 
 
 ---
 
-## Gotchas worth knowing
+## Tips
 
 **The mod is global, not per-input.** Fast blanking sits downstream of source selection, so with the switch closed the set ignores whichever composite source is selected, including AV2 on the front. That is the price of one hardware switch.
 
