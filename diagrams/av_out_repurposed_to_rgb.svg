@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="415" viewBox="0 0 680 415" role="img">
+<title>Repurposing the AV monitor-out jacks as RGB inputs (MC-8CB)</title>
+<desc>Each monitor-out RCA jack is isolated by removing its series part, then linked on the PJ201 SCART footprint: pad 19 to 15, pad 3 to 11, pad 1 to 7. The existing 75 ohm terminations and 1.5k series resistors then feed pins 23, 24 and 25 of IC512.</desc>
+<style>
+text{font-family:Arial,Helvetica,sans-serif}
+.t{font-size:14px;fill:#3D3D3A}
+.ts{font-size:12px;fill:#5F5E5A}
+.th{font-size:14px;font-weight:500;fill:#3D3D3A}
+.c-gray rect{fill:#F1EFE8;stroke:#5F5E5A}
+.c-gray .th{fill:#2C2C2A}
+.c-gray .ts{fill:#5F5E5A}
+.c-teal rect{fill:#E1F5EE;stroke:#0F6E56}
+.c-teal .th{fill:#04342C}
+.c-teal .ts{fill:#0F6E56}
+</style>
+<rect width="680" height="415" fill="#FFFFFF"/>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect x="520" y="95" width="125" height="265" rx="6" fill="#FFFFFF" stroke="#5F5E5A" stroke-width="0.5"/>
+<text class="th" x="582" y="117" text-anchor="middle">IC512</text>
+<text class="ts" x="582" y="133" text-anchor="middle">TDA8844</text>
+<text class="ts" x="532" y="154">23  red</text>
+<text class="ts" x="532" y="234">24  grn</text>
+<text class="ts" x="532" y="314">25  blu</text>
+<rect x="40" y="138" width="54" height="24" rx="4" fill="#FFFFFF" stroke="#5F5E5A" stroke-width="0.5"/>
+<text class="ts" x="67" y="154" text-anchor="middle">V-OUT</text>
+<line x1="94" y1="150" x2="250" y2="150" stroke="#5F5E5A" stroke-width="1"/>
+<circle cx="150" cy="150" r="2.5" fill="#5F5E5A"/>
+<line x1="150" y1="150" x2="150" y2="116" stroke="#5F5E5A" stroke-width="1"/>
+<rect x="128" y="100" width="44" height="16" fill="#FFFFFF" stroke="#5F5E5A" stroke-width="0.5"/>
+<line x1="130" y1="102" x2="170" y2="114" stroke="#D85A30" stroke-width="1.5"/>
+<line x1="170" y1="102" x2="130" y2="114" stroke="#D85A30" stroke-width="1.5"/>
+<text class="ts" x="150" y="92" text-anchor="middle">R237 + C233</text>
+<circle cx="250" cy="150" r="3" fill="#5F5E5A"/>
+<text class="ts" x="250" y="140" text-anchor="middle">19</text>
+<line x1="250" y1="150" x2="330" y2="150" stroke="#D85A30" stroke-width="2"/>
+<circle cx="330" cy="150" r="3" fill="#5F5E5A"/>
+<text class="ts" x="330" y="140" text-anchor="middle">15</text>
+<rect x="323" y="160" width="14" height="26" fill="#FFFFFF" stroke="#5F5E5A" stroke-width="0.5"/>
+<text class="ts" x="345" y="178">R233</text>
+<line x1="330" y1="186" x2="330" y2="192" stroke="#5F5E5A" stroke-width="1"/>
+<line x1="322" y1="192" x2="338" y2="192" stroke="#5F5E5A" stroke-width="1"/>
+<line x1="325" y1="196" x2="335" y2="196" stroke="#5F5E5A" stroke-width="1"/>
+<line x1="327" y1="200" x2="333" y2="200" stroke="#5F5E5A" stroke-width="1"/>
+<line x1="330" y1="150" x2="400" y2="150" stroke="#5F5E5A" stroke-width="1"/>
+<rect x="400" y="142" width="56" height="16" fill="#FFFFFF" stroke="#5F5E5A" stroke-width="0.5"/>
+<text class="ts" x="428" y="134" text-anchor="middle">R532</text>
+<line x1="456" y1="150" x2="520" y2="150" stroke="#5F5E5A" stroke-width="1"/>
+
+<rect x="40" y="218" width="54" height="24" rx="4" fill="#FFFFFF" stroke="#5F5E5A" stroke-width="0.5"/>
+<text class="ts" x="67" y="234" text-anchor="middle">L-OUT</text>
+<line x1="94" y1="230" x2="250" y2="230" stroke="#5F5E5A" stroke-width="1"/>
+<circle cx="150" cy="230" r="2.5" fill="#5F5E5A"/>
+<line x1="150" y1="230" x2="150" y2="196" stroke="#5F5E5A" stroke-width="1"/>
+<rect x="128" y="180" width="44" height="16" fill="#FFFFFF" stroke="#5F5E5A" stroke-width="0.5"/>
+<line x1="130" y1="182" x2="170" y2="194" stroke="#D85A30" stroke-width="1.5"/>
+<line x1="170" y1="182" x2="130" y2="194" stroke="#D85A30" stroke-width="1.5"/>
+<text class="ts" x="150" y="172" text-anchor="middle">C231</text>
+<circle cx="250" cy="230" r="3" fill="#5F5E5A"/>
+<text class="ts" x="250" y="220" text-anchor="middle">3</text>
+<line x1="250" y1="230" x2="330" y2="230" stroke="#D85A30" stroke-width="2"/>
+<circle cx="330" cy="230" r="3" fill="#5F5E5A"/>
+<text class="ts" x="330" y="220" text-anchor="middle">11</text>
+<rect x="323" y="240" width="14" height="26" fill="#FFFFFF" stroke="#5F5E5A" stroke-width="0.5"/>
+<text class="ts" x="345" y="258">R232</text>
+<line x1="330" y1="266" x2="330" y2="272" stroke="#5F5E5A" stroke-width="1"/>
+<line x1="322" y1="272" x2="338" y2="272" stroke="#5F5E5A" stroke-width="1"/>
+<line x1="325" y1="276" x2="335" y2="276" stroke="#5F5E5A" stroke-width="1"/>
+<line x1="327" y1="280" x2="333" y2="280" stroke="#5F5E5A" stroke-width="1"/>
+<line x1="330" y1="230" x2="400" y2="230" stroke="#5F5E5A" stroke-width="1"/>
+<rect x="400" y="222" width="56" height="16" fill="#FFFFFF" stroke="#5F5E5A" stroke-width="0.5"/>
+<text class="ts" x="428" y="214" text-anchor="middle">R533</text>
+<line x1="456" y1="230" x2="520" y2="230" stroke="#5F5E5A" stroke-width="1"/>
+
+<rect x="40" y="298" width="54" height="24" rx="4" fill="#FFFFFF" stroke="#5F5E5A" stroke-width="0.5"/>
+<text class="ts" x="67" y="314" text-anchor="middle">R-OUT</text>
+<line x1="94" y1="310" x2="250" y2="310" stroke="#5F5E5A" stroke-width="1"/>
+<circle cx="150" cy="310" r="2.5" fill="#5F5E5A"/>
+<line x1="150" y1="310" x2="150" y2="276" stroke="#5F5E5A" stroke-width="1"/>
+<rect x="128" y="260" width="44" height="16" fill="#FFFFFF" stroke="#5F5E5A" stroke-width="0.5"/>
+<line x1="130" y1="262" x2="170" y2="274" stroke="#D85A30" stroke-width="1.5"/>
+<line x1="170" y1="262" x2="130" y2="274" stroke="#D85A30" stroke-width="1.5"/>
+<text class="ts" x="150" y="252" text-anchor="middle">C232</text>
+<circle cx="250" cy="310" r="3" fill="#5F5E5A"/>
+<text class="ts" x="250" y="300" text-anchor="middle">1</text>
+<line x1="250" y1="310" x2="330" y2="310" stroke="#D85A30" stroke-width="2"/>
+<circle cx="330" cy="310" r="3" fill="#5F5E5A"/>
+<text class="ts" x="330" y="300" text-anchor="middle">7</text>
+<rect x="323" y="320" width="14" height="26" fill="#FFFFFF" stroke="#5F5E5A" stroke-width="0.5"/>
+<text class="ts" x="345" y="338">R231</text>
+<line x1="330" y1="346" x2="330" y2="352" stroke="#5F5E5A" stroke-width="1"/>
+<line x1="322" y1="352" x2="338" y2="352" stroke="#5F5E5A" stroke-width="1"/>
+<line x1="325" y1="356" x2="335" y2="356" stroke="#5F5E5A" stroke-width="1"/>
+<line x1="327" y1="360" x2="333" y2="360" stroke="#5F5E5A" stroke-width="1"/>
+<line x1="330" y1="310" x2="400" y2="310" stroke="#5F5E5A" stroke-width="1"/>
+<rect x="400" y="302" width="56" height="16" fill="#FFFFFF" stroke="#5F5E5A" stroke-width="0.5"/>
+<text class="ts" x="428" y="294" text-anchor="middle">R534</text>
+<line x1="456" y1="310" x2="520" y2="310" stroke="#5F5E5A" stroke-width="1"/>
+
+<line x1="40" y1="392" x2="64" y2="392" stroke="#D85A30" stroke-width="2"/>
+<text class="ts" x="70" y="396">link to add</text>
+<line x1="170" y1="386" x2="186" y2="398" stroke="#D85A30" stroke-width="1.5"/>
+<line x1="186" y1="386" x2="170" y2="398" stroke="#D85A30" stroke-width="1.5"/>
+<text class="ts" x="194" y="396">remove to isolate the jack</text>
+<line x1="400" y1="392" x2="424" y2="392" stroke="#5F5E5A" stroke-width="1"/>
+<text class="ts" x="430" y="396">already on the board</text>
+</svg>
