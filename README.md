@@ -62,7 +62,7 @@ This chassis uses one PCB artwork for both the SCART build and the phone-jack bu
 
 **Not fitted**
 
-| Ref | Value | Why it matters |
+| Ref | Value |  |
 |---|---|---|
 | PJ201 SCART | | Footprint present, connector absent |
 | R557 | 510R | The blanking path. Use this footprint for your pull-up |
