@@ -2,13 +2,11 @@
 
 Adding an RGB input to an LG CRT television that left the factory without a SCART connector, by repurposing the rear AV monitor-out phono jacks.
 
-There is no RGB mod thread, CRT Database entry or forum write-up for this chassis anywhere I could find. The closest documented relative is LG's MC-84A, and the one piece of information that actually blocks the mod is in neither.
+There is no RGB mod thread, CRT Database entry or forum write-up for this chassis anywhere I could find. 
 
 ---
 
 ## Getting the service manual
-
-Not included here: it's LG's copyrighted document and the circulating scans are third-party. It is easy to find.
 
 | Document | Search for |
 |---|---|
