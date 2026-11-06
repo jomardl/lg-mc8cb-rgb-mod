@@ -6,6 +6,22 @@ There is no RGB mod thread, CRT Database entry or forum write-up for this chassi
 
 ---
 
+## Getting the service manual
+
+Not included here: it's LG's copyrighted document and the circulating scans are third-party. It is easy to find.
+
+| Document | Search for |
+|---|---|
+| CT-25M60 / CT-29M60 full service manual | `ct2529m60et` (ManualsLib) |
+| MC-8CB chassis service sheet | `lg_chassis-mc-8cb.pdf` ([Elektrotanya](https://elektrotanya.com/lg_chassis-mc-8cb.pdf/download.html)) |
+| MC-84A chassis service sheet, useful cross-reference | `lg_chassis_mc84a.pdf` ([Elektrotanya](https://elektrotanya.com/lg_chassis_mc84a.pdf/download.html)) |
+
+The full manual is a 28-page scan with no text layer: schematics, exploded parts diagram, parts lists, adjustment procedures and the OPTION tables. No PCB layout, and no mechanical drawings.
+
+Every diagram in this repo is redrawn from scratch rather than cropped from the manual, so you can follow the mod without it. You will want it for the parts lists and the full schematic.
+
+---
+
 ## The thing that will waste your day
 
 The hardware is four parts and about six joints. **The step that blocks you is a service-menu option bit.**
