@@ -159,7 +159,7 @@ Note that the two audio-side links **cross** with this mapping. If you would rat
 
 ![PJ201 area, solder side](photos/pj201-solder-side.jpg)
 
-*Solder side, flipped horizontally so the silkscreen reads the right way round. R235 and R237 sit either side of C233, J99 is next to R236, R231 to R233 are in a row, and C231 and C232 are over by R305.*
+*Solder side of the main board, the PJ201 area. R235 and R237 sit either side of C233, J99 is next to R236, R231 to R233 are in a row, and C231 and C232 are over by R305.*
 
 ![AV out repurposed to RGB](diagrams/av_out_repurposed_to_rgb.svg)
 
