@@ -149,6 +149,12 @@ The colour assignment above is chosen so the two audio-side links nest rather th
 
 **Grounds come free.** The jack shells and SCART ground pads are the same copper, so there is no separate ground wiring at all.
 
+**The board silkscreen names the jacks**, so you can identify everything from the board without tracing. Look for `V1-IN`, `L-I` and `R-I` on the AV1 inputs, and `TV-o`, `L-o` and `R-o` on the three monitor outputs you are repurposing. `PJ201` marks the connector.
+
+![PJ201 area, solder side](photos/pj201-solder-side.jpg)
+
+*Solder side, flipped horizontally so the silkscreen reads the right way round. R235 and R237 sit either side of C233, J99 is next to R236, R231 to R233 are in a row, and C231 and C232 are over by R305.*
+
 ![AV out repurposed to RGB](diagrams/av_out_repurposed_to_rgb.svg)
 
 ### Blanking
