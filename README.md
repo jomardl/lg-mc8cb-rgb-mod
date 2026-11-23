@@ -20,13 +20,9 @@ Every diagram in this repo is redrawn from scratch rather than cropped from the 
 
 ---
 
-## The thing that will waste your day
-
-The hardware is four parts and about six joints. **The step that blocks you is a service-menu option bit.**
+## Service Menu Shenanigans
 
 The µC holds the jungle's RGB insertion disabled (`IE1`) until `OPTION-1`'s **SCART** bit is set to `1`. Until you flip it, fast blanking on pin 26 can sit at exactly the right voltage and nothing happens: you keep seeing the composite picture and conclude the mod has failed.
-
-The service manual annotates that bit as "SCART JACK (AV1) **with RGB Input**" versus "PHONE JACK (AV1)", which is the only clue it gives. That the bit gates insertion is inference from the symptom, not something the manual states, but on my set flipping it was the difference between no RGB and working RGB with nothing else changed.
 
 ---
 
@@ -44,8 +40,6 @@ The service manual annotates that bit as "SCART JACK (AV1) **with RGB Input**" v
 The manual is a scanned PDF with no text layer and no PCB layout, only schematics, an exploded parts diagram and parts lists.
 
 ---
-
-## What the factory leaves out
 
 This chassis uses one PCB artwork for both the SCART build and the phone-jack build, with selective population. On a phone-jack set:
 
@@ -71,15 +65,13 @@ This chassis uses one PCB artwork for both the SCART build and the phone-jack bu
 | J99, J70 | links | Build-option jumpers |
 | D505 to D508 | 1N4148 | Teletext RGB and blanking injection |
 
-There is a pattern here worth understanding. Everything LG removed sits on the **fast blanking** path. Leave R557 in on a set with no SCART socket and you have an unterminated open-ended PCB trace running into pin 26 through 510 ohms: pick up more than 0.9V anywhere inside a CRT chassis and the chip switches to RGB inputs that have nothing on them. Black screen, intermittent, no obvious cause.
-
-Everything they left in does the opposite. The 75R terminations tie the unused EXT traces to ground, so pins 23, 24 and 25 sit at a defined black rather than floating.
+The 75R terminations tie the unused EXT traces to ground
 
 ---
 
-## How fast blanking works on this chip
+## Fast blanking
 
-Pin 26 is a resistive summing node, not a logic input. Four things can drive it and nothing isolates them from each other. R535 1.5k is the default: with nothing driving, the node sits at 0V and the chip shows its internally decoded picture.
+R535 1.5k is the default: with nothing driving, the node sits at 0V and the chip shows its internally decoded picture.
 
 The TDA8843/8844 datasheet gives three bands:
 
@@ -91,21 +83,18 @@ The TDA8843/8844 datasheet gives three bands:
 
 That third band explains the chassis layout. The on-screen menu is **not** routed through the jungle: OSD R, G and B are diode-OR'd onto the jungle's *output* lines at pins 21, 20 and 19 through D501, D502 and D503. Q512 drives pin 26 above 4V so the chip's own picture gets out of the way, then the diodes paint the menu on.
 
-Teletext, where fitted, uses the middle band instead: its RGB arrives at pins 23 to 25 through D505 to D507, so TXT-FB has to land between 0.9 and 3V, not above 4.
-
-Three drivers, three different uses of one node.
+Teletext uses the middle band instead: its RGB arrives at pins 23 to 25 through D505 to D507, so TXT-FB has to land between 0.9 and 3V, not above 4.
 
 ![Fast blanking node](diagrams/tda8844_fast_blanking_node.svg)
 
 ---
 
-## The mod
+## THE MOD
 
-### Approach
 
 The rear panel has six phono jacks: AV1 in (V, L, R) and monitor out (V, L, R). Keep the three inputs doing what they do, and repurpose the three **outputs** as the RGB inputs. You lose the ability to record off the TV, which nobody has done this century.
 
-This beats fitting new jacks: no cabinet modification, and the runs drop from 200mm of harness to about 30mm on the board, which makes the noise question disappear entirely.
+This beats fitting new jacks: no cabinet modification, and the runs drop from 200mm of harness to about 30mm on the board, so no interference
 
 ### Parts
 
@@ -119,7 +108,7 @@ This beats fitting new jacks: no cabinet modification, and the runs drop from 20
 
 The pull-up value is not critical. With R535 measured at 1.4k in circuit, anything from **3.3k to 7k** lands pin 26 inside the insertion band with margin for an 8V rail at tolerance and a 5% resistor. 5.1k gives 1.72V, worst case 1.55 to 1.91V, which never approaches either threshold. 10k is too much: 0.98V nominal, and it falls under the 0.9V floor on a sagging rail.
 
-### Remove, one part per jack
+### Remove
 
 | Part | Value | Isolates |
 |---|---|---|
@@ -141,13 +130,13 @@ The monitor-out jacks and the SCART footprint share nets, so you can link pad to
 
 **Verify this on your board first.** C233's output node splits two ways, to R235 for the jack and to R237 for SCART pad 19, and on my set R237 was unpopulated. Beep each jack's centre pin to its SCART pad. If they beep, link pad to pad. If they don't, run a short wire from the jack's own pad to the SCART pad instead. Same electrical result.
 
-Jack-to-colour is arbitrary, since you are labelling the back panel yourself. The mapping above is the one on the set photographed here, which keeps the panel order reading R, G, B left to right.
+Mapping above is the one on the set photographed here, which keeps the panel order reading R, G, B left to right.
 
 Note that the two audio-side links **cross** with this mapping. If you would rather they nest, swap them: pad 3 to pad 7 for blue and pad 1 to pad 11 for green, then label the panel to match.
 
 **Use insulated wire.** All three links run along the odd pad row and pass over other pads, including grounds at 5, 9, 13 and 17. Not bare links, and certainly not solder bridges.
 
-**Grounds come free.** The jack shells and SCART ground pads are the same copper, so there is no separate ground wiring at all.
+**Grounds** The jack shells and SCART ground pads are the same copper, so there is no separate ground wiring at all.
 
 **The board silkscreen names the jacks**, so you can identify everything from the board without tracing. Look for `V1-IN`, `L-I` and `R-I` on the AV1 inputs, and `TV-o`, `L-o` and `R-o` on the three monitor outputs you are repurposing. `PJ201` marks the connector.
 
