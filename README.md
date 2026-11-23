@@ -4,6 +4,8 @@ Adding an RGB input to an LG CRT television with AV out, but SCART footprint on 
 
 There is no RGB mod thread, CRT Database entry or forum write-up for this chassis anywhere I could find. 
 
+20261123_112137.jpg
+![RGB output](photos/20261123_112137.jpg)
 ---
 
 ## Getting the service manual
