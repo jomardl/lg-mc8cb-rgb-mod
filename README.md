@@ -1,6 +1,6 @@
 # LG CT-25M60 / CT-29M60 RGB mod (chassis MC-8CB) EASY RGB MOD
 
-Adding an RGB input to an LG CRT television with AV out, but SCART footprint on the PCB. Rather than adding new jacks or a SCART connecter, I just repurposed the rear AV monitor-out RCA jacks. 
+Adding an RGB input to an LG CRT television with AV out, **but SCART footprint on the PCB**. Rather than adding new jacks or a SCART connecter, I just repurposed the rear AV monitor-out RCA jacks. 
 
 There is no RGB mod thread, CRT Database entry or forum write-up for this chassis anywhere I could find. 
 
@@ -19,13 +19,6 @@ There is no RGB mod thread, CRT Database entry or forum write-up for this chassi
 The full manual is a 28-page scan with no text layer: schematics, exploded parts diagram, parts lists, adjustment procedures and the OPTION tables. No PCB layout, and no mechanical drawings.
 
 Every diagram in this repo is redrawn from scratch rather than cropped from the manual, so you can follow the mod without it. You will want it for the parts lists and the full schematic.
-
----
-
-## Service Menu Shenanigans
-
-The µC holds the jungle's RGB insertion disabled (`IE1`) until `OPTION-1`'s **SCART** bit is set to `1`. Until you flip it, fast blanking on pin 26 can sit at exactly the right voltage and nothing happens: you keep seeing the composite picture and conclude the mod has failed.
-
 ---
 
 ## The set
